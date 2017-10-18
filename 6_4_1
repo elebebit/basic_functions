@@ -1,0 +1,14 @@
+dogs=[]
+for dog_num in range(10):
+	dogg={'color':'yello','speed':'low'}
+	dogs.append(dogg)
+for dog in dogs[0:4]:
+	if dog['color']=='yello':
+		dog['color']='blue'
+		if dog['color']=='blue':
+			dog['speed']='high'
+    #	sky={'fly':'can'}
+    #	dogs.append(sky)
+for dog in dogs[0:10]:
+    print (dog)		
+print(str(len(dogs)))
