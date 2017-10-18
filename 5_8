@@ -1,0 +1,13 @@
+names=['q','w','e','r','adminn']
+begins=['y','adminn']
+if begins:
+    for begin in begins:
+        if begin == 'adminn' :
+	        print("hello,admin") 
+        else:
+        	if begin in names:
+	            print("hello "+begin)
+	        else:
+	        	print("no way")
+else:
+	print("no logging")
