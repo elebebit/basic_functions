@@ -1,0 +1,15 @@
+def make_function():
+	t_t={'length':[],'type':[]}
+	while True:
+		n=raw_input("\n type your name")
+		#message1=""
+		ab=raw_input(" check ")
+        #message2=""
+		if n=='w':
+			break
+		else:
+			t_t['length'].append(n)
+			t_t['type'].append(ab)
+		print(t_t['length'])
+#print注意，组和字典
+make_function()
