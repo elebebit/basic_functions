@@ -1,0 +1,19 @@
+def show_magic(showmagics,newmagics):
+	while showmagics:
+		mm=showmagics.pop()
+		print(mm)
+		newmagics.append(mm)
+	print(newmagics)
+	print(showmagics)
+
+def make_magic():
+	for magic in showmagics:
+		print('the Great '+magic)
+
+
+
+
+showmagics=['ll','qq','ee']
+newmagics=[]
+show_magic(showmagics[:],newmagics)
+make_magic()
