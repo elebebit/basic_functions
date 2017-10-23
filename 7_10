@@ -1,0 +1,14 @@
+ideal={}
+pp=True
+while pp:
+	names=raw_input("\nwho you are?")
+	a=raw_input("where will you go? ")
+	ideal[names]=a
+
+	repeat=raw_input("will you recommend this page to your friends? ")
+	if repeat=="yes":
+		continue
+	else:
+		break
+for names,a in ideal.items():
+	print(names+" to "+a)
