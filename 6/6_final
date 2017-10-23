@@ -1,0 +1,25 @@
+people={
+	'nike':{
+        'age':'18',
+        'job':'farmer'
+		   },
+	'black':{
+        'age':'22',
+        'job':'cook'
+			},
+	'white':{
+		'age':'13',
+		'job':'police',
+		'likes':[]
+     	 	}	
+		}
+for ages in people.values():
+	print(ages['age'])
+
+for jobs in people['white']:
+	new=people['white']
+	if new['job']=='police':
+		new['job']='nurse'
+		like='swim'
+		new['likes'].append(like)
+print(people)
