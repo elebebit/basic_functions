@@ -1,0 +1,14 @@
+class Restaurant(object):
+	def __init__(self,r_name,r_type):
+		self.name=r_name
+		self.type=r_type
+
+	def p1(self):
+		print('there is a '+self.name+' room')
+
+	def p2(self):
+		print('it is  '+self.type)
+
+r_1=Restaurant('god','beautiful')
+r_1.p1()
+r_1.p2()
