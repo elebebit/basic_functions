@@ -1,0 +1,8 @@
+sandwich_orders=['aa','bb','cc',"aa","aa"]
+finished_sandwich=[]
+while sandwich_orders:
+	sandwich=sandwich_orders.pop()
+	print("i made "+sandwich)
+	finished_sandwich.append(sandwich)
+while finished_sandwich:
+	print(finished_sandwich.pop())
