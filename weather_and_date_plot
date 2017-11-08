@@ -1,0 +1,25 @@
+import csv
+from matplotlib import pyplot as plt
+from datetime import datetime
+
+file='sitka_weather_07-2014.csv'
+with open(file) as it :
+	reader=csv.reader(it)
+	data=next(reader)
+
+	dates,highs=[],[]
+
+	for ras in reader:
+		high=int(ras[1])
+		date=datetime.strptime(ras[0],"%Y-%m-%d")
+		highs.append(high)
+		dates.append(date)
+
+for line in range(31):
+	print(dates[line])
+	print(highs[line])
+
+fig=plt.figure(dpi=128)
+plt.plot(dates,highs,c='red')
+fig.autofmt_xdate()
+plt.show()
