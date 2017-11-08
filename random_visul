@@ -1,0 +1,18 @@
+import matplotlib.pyplot as plt
+
+from random_walk import Randomwalk
+
+#while True:
+	
+rw=Randomwalk(5000)
+rw.fillwalk()
+point_num=list(range(rw.point))
+plt.scatter(rw.x_value,rw.y_value,c=point_num,cmap=plt.cm.Blues,edgecolor='none',s=19)
+plt.axes().get_xaxis().set_visible(False)
+plt.axes().get_yaxis().set_visible(False)
+plt.axis([0,10000 ,0,200])
+plt.show()
+
+#	keep=raw_input('do you want to continue')
+#	if keep=='n':
+#		break
