@@ -1,0 +1,34 @@
+from random import randint
+
+class Digital():
+	
+	def __init__(self,point=8):
+		self.point=point
+	def make(self):
+		return randint(1,self.point)
+
+
+
+
+
+
+from exq import Digital
+import pygal
+
+digital=Digital()
+
+numlist=[]
+for num in range(100):
+	ll=digital.make()
+	numlist.append(ll)
+
+frequency=[]
+
+for qq in range(1,digital.point+1):
+	qa=numlist.count(qq)
+	frequency.append(qa)
+
+hipe=pygal.Bar()
+hipe.x_labels=['1','2','3','4','5','6','7','8']
+hipe.add('d8',frequency)
+hipe.render_to_file('exqtest.svg')
