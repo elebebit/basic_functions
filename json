@@ -1,0 +1,11 @@
+import json
+
+name=['lilizhou','aunt','dada']
+name_define='name.jaso'
+with open(name_define,'w') as itt:
+	json.dump(name,itt)
+
+
+with open(name_define) as io:
+	po=json.load(io)
+	print(po)
