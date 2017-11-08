@@ -1,0 +1,8 @@
+file_name='write.txt'
+with open (file_name,'a') as name_write:
+
+	name_write.write('ii')
+with open (file_name) as name_write1:
+	name=name_write1.readlines()
+	for line in name:
+		print(line)
