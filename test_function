@@ -1,0 +1,28 @@
+class Employee():
+	def __init__(self,name):
+		self.name=name
+		self.salary=[]
+
+	def give_raise(self,salary):
+		self.salary=salary
+		self.salary=self.salary+5
+		#print(self.salary)
+
+#emm=Employee('lon')
+#emm.give_raise(7)
+
+
+
+
+
+import unittest
+from exe import Employee
+
+class Testsalary(unittest.TestCase):
+
+	def test_give_raise(self):
+		mytest=Employee('long')
+		mytest.give_raise(7)
+		self.assertEqual(12,mytest.salary)
+
+unittest.main()
