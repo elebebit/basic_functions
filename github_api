@@ -1,0 +1,31 @@
+import requests
+import pygal
+from pygal.style import LightColorizedStyle as lcs, LightenStyle as ls
+
+url='https://api.github.com/search/repositories?q=language:python&sort=stars'
+r=requests.get(url)
+#print("status code:",r.status_code)
+
+requests_dict=r.json()
+
+#print(requests_dict.keys())
+#print(requests_dict['total_count'])
+#print(len(requests_dict['items']))
+
+repo=requests_dict['items']
+
+names,plotas=[],[]
+for repoa in repo:
+	names.append(repoa['name'])
+	plota={'value':repoa['stargazers_count'],
+	'label':repoa['description'],
+	'xlink':repoa['html_url']
+	}
+	plotas.append(plota)
+
+mystyle=ls('#333366',base_style=lcs)
+fig=pygal.Bar(style=mystyle,x_label_rotation=50,show_lengend=False)
+fig.x_labels=names
+
+fig.add('',plotas)
+fig.render_to_file('python_repoas.svg')
