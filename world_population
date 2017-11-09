@@ -1,0 +1,51 @@
+from pygal.i18n import COUNTRIES
+
+def get_code(country_name):
+	for code,name in COUNTRIES.items():
+		if name == country_name:
+			return code
+	return None
+  
+  
+  
+  
+  
+  import json
+from country_codes import get_code
+import pygal
+from pygal.style import RotateStyle
+
+filename='population_data.json'
+
+with open (filename) as it:
+	poop=json.load(it)
+
+wp_pop={}
+for data in poop:
+	if data['Year']=='2010':
+		country=data['Country Name']
+		population=int(float(data['Value']))
+		#print(country+''+str(population))
+		code=get_code(country)
+		if code:
+			wp_pop[code]=population
+			#print(code+''+str(population))			
+
+
+wp_pop_1,wp_pop_2,wp_pop_3={},{},{}
+
+
+for wp,pop in wp_pop.items():
+	if pop<10000000:
+		wp_pop_1[wp]=pop
+	elif pop<1000000000:
+		wp_pop_2[wp]=pop
+	else:
+		wp_pop_3[wp]=pop 
+
+wp=pygal.Worldmap()
+wp.add('small',wp_pop_1)
+wp.add('middle',wp_pop_2)
+wp.add('large',wp_pop_3)
+
+wp.render_to_file('world.svg')
