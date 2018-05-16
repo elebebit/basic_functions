@@ -1,0 +1,5 @@
+Activation Function:
+
+-Sigmoid:  non-linearity squashes real numbers to range between [0,1] 
+---shortcoming:output is not the average 0 | saturate and kill gradient
+
