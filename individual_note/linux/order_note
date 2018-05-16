@@ -1,0 +1,28 @@
+Login: ssh xxx     (xx@133.9.67.171   xx@133.9.8.197)
+Make file: mkdir /home/xx
+Data transmission: scp Desktop/xx xx@xx:/home/xx
+Delete: rm -r /home/xx
+Stick-up: cp /xx/xx /home/xx
+List: ls
+Get root: sudo -I
+
+Backstage:
+-Screen:
+screen -ls
+screen -r xx
+
+
+-Tmux
+tmux new -s demo (make new window)
+tmux attach (enter window)
+tmux detach (exit windos)
+ctrl+b+d (exit server and keep tmux work)
+
+
+GPU:
+who 
+nvidia-smi
+
+Modify environment variable:
+vi.bashrc 
+source.bashrc
