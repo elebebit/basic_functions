@@ -1,5 +1,50 @@
 Activation Function:
 
--Sigmoid:  non-linearity squashes real numbers to range between [0,1] 
+-sigmoid:  non-linearity squashes real numbers to range between [0,1] | two type classficaiton |(avoid to use)
 ---shortcoming:output is not the average 0 | saturate and kill gradient
+torch.nn.fucntional.sigmoid()
+
+-tanh: same as sigmoid
+--output is the average 0
+torch.nn.fucntional.tanh()
+
+-relu: input>0, output=input; input<o, output=0
+--shortcoming: If the learning rate is large, most neurons will dead
+torch.nn.functional.relu()
+
+--leaky-relu: set a alpha to replace 0. The threshold is not 0 but alpha
+torch.nn.functional.leaky_relu()
+
+-parametric relu: regard alpha as a parameter to train
+torch.nn.functional.prelu()
+
+-randomized relu: alpha is given from a gaussion distribution
+torch.nn.functional.rrelu()
+
+-maxout: get the best line
+
+-softplus: more smooth than relu
+torch.nn.functional.softplus()
+
+-softmax: multi-classification
+torch.nn.functional.softmax()
+
+
+
+
+Loss funtion:
+
+torch.nn.L1Loss()--loss(x,y)=1/n*|xi-yi|
+
+torch.nn.MSELoss()--loss(x,y)=1/n|xi-yi|^2
+
+torch.nn.CrossEntropyLoss(weight)--aim to multi-classfication with unbalance weights
+
+torch.nn.NLLoss()--same as CrossEntroyLoss. Add logSoftmax at the last layer
+
+torch.nn.HingeEmbeddingLoss()--compute the loss between tensor x and tensor y, judge the similarity
+
+torch.nn.SoftMarginLoss()-- two-type classification. x is two-dimention mini-batch tensor, y is a tensor including 1 and -1
+
+
 
