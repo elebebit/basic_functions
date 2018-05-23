@@ -1,0 +1,29 @@
+import glob as gb
+import cv2
+import os 
+import numpy as np
+from PIL import Image
+
+i=0
+n=1
+while True:
+	img_path = gb.glob('/Users/longyu/Desktop/project/head_pose_estimation/hpdb/'+str(n)+'/*.png') 
+	face_patterns = cv2.CascadeClassifier('/usr/local/Cellar/opencv/3.4.1_2/share/OpenCV/haarcascades/haarcascade_frontalface_default.xml') #opencv的人脸检测库文件  
+
+
+	#print(len(img_path))
+	for path in img_path:
+		img  = cv2.imread(path) 
+		faces = face_patterns.detectMultiScale(img,scaleFactor=1.1,minNeighbors=8,minSize=(100, 100))       
+		for (x, y, w, h) in faces:
+			cv2.rectangle(img, (x, y), (x+w, y+h), (0, 255, 0), 2)
+			img_crop=img[y:y+h,x:x+w] 
+			cv2.imwrite('/Users/longyu/Desktop/project/head_pose_estimation/imgs_clip/'+str(i)+'.png',img_crop)     
+			#io.imread('/Users/longyu/Desktop/project/head_pose_estimation/imgs/'+str(i)+'.jpg',img_crop)
+			i+=1
+	print(n)
+	n+=1
+	if n==25:
+		break
+	else:
+		continue
