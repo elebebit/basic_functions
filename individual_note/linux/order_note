@@ -23,6 +23,14 @@ GPU:
 who 
 nvidia-smi
 
+----------------------------
 Modify environment variable:
-vi.bashrc 
-source.bashrc
+
+vim ~/.bashrc 添加：
+
+编辑：a
+export PATH=/home/yulong/sw/Python-3.7.0:$PATH
+
+退出 :wq! 
+更新路径：source ~/.bashrc
+------------------------
