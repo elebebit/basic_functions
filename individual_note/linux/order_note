@@ -6,6 +6,11 @@ Stick-up: cp /xx/xx /home/xx
 List: ls
 Get root: sudo -I
 
+tar
+解包：tar xvf FileName.tar
+打包：tar cvf FileName.tar DirName
+
+
 Backstage:
 -Screen:
 screen -ls
