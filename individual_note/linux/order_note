@@ -16,14 +16,20 @@ Backstage:
 screen -ls
 screen -r xx
 
-
+---------------------------------------
 -Tmux
 tmux new -s demo (make new window)
-tmux attach (enter window)
+tmux a (enter window)
+tmux a [-t 会话名]
 tmux detach (exit windos)
+tmux kill-session -t 会话名(kill session)
+
+
+
 ctrl+b+d (exit server and keep tmux work)
 
 
+---------------------------------------
 GPU:
 who 
 nvidia-smi
