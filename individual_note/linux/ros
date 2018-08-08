@@ -4,5 +4,8 @@ rospack find（注意包的添加路径）
 roscreate-pkg [package_name] [depend1] [depend2] [depend3]
 rosmake
 
+roscore = ros+core : master (提供为名称服务) + rosout  (stdout/stderr) + parameter server (参数服务器) 
+rosnode = ros+node : 获取节点信息的ROS工具
+rosrun = ros+run :  运行节点工具
 rosnode list
 rosrun turtlesim turtlesim_node __name:=my_turtle
