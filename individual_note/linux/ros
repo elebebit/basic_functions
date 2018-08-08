@@ -18,3 +18,5 @@ rosservice find         依据类型寻找服务find services by service type
 rosservice uri          输出服务的ROSRPC uri 
 
 --------------------------------------------------------------------------
+
+rosparam get/set [name] [number]
