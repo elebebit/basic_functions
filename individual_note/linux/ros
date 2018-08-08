@@ -4,4 +4,5 @@ rospack find（注意包的添加路径）
 roscreate-pkg [package_name] [depend1] [depend2] [depend3]
 rosmake
 
+rosnode list
 rosrun turtlesim turtlesim_node __name:=my_turtle
