@@ -9,3 +9,12 @@ rosnode = ros+node : 获取节点信息的ROS工具
 rosrun = ros+run :  运行节点工具
 rosnode list
 rosrun turtlesim turtlesim_node __name:=my_turtle
+
+---------------------------------------------------------------------------
+rosservice list         输出可用服务的信息
+rosservice call         调用带参数的服务
+rosservice type         输出服务类型
+rosservice find         依据类型寻找服务find services by service type
+rosservice uri          输出服务的ROSRPC uri 
+
+--------------------------------------------------------------------------
