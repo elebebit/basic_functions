@@ -1,0 +1,5 @@
+drakflow:
+python3 ./flow --model cfg/yolo-2.cfg --load bin/yolo.weights --labels mylabels.txt --train --annotation /home/yulong/long/project/darkflow/Annotations --dataset /home/yulong/long/project/darkflow/JPEGImages --gpu 1.0
+
+darknet:
+./darknet detector test ./obj_detect/obj_voc.data ./obj_detect/yolov3-voc.cfg ./obj_detect/backup/yolov3-voc_900.weights ./obj_detect/JPEGImages/000001.jpg
