@@ -3,3 +3,4 @@ python3 ./flow --model cfg/yolo-2.cfg --load bin/yolo.weights --labels mylabels.
 
 darknet:
 ./darknet detector test ./obj_detect/obj_voc.data ./obj_detect/yolov3-voc.cfg ./obj_detect/backup/yolov3-voc_900.weights ./obj_detect/JPEGImages/000001.jpg
+./darknet detector train obj_detect/obj_voc.data obj_detect/yolov3-voc.cfg obj_detect/yolov3-voc_final.weights
