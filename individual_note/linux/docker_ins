@@ -1,0 +1,16 @@
+
+
+docker run -itd（允许交互|指定终端|后台 ） ubuntu.15.10/latest /bin/bash 在容器里运行一个程序
+----------------------------------------------------------------------
+
+docker images    本机镜像
+docker ps （-a） 本机正在运行的容器
+docker pull xx/xx 载入xx镜像
+docker search xx   查找镜像
+docker logs xxx  查看容器输出
+docker stop/start/rm 操作容器
+docker attach xxx 进入容器
+
+nvidia-docker 与 docker 同理
+
+
