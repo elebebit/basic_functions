@@ -16,3 +16,53 @@ export PATH=/home/yulong/sw/opencv-3.4.0/install/bin:$PATH
 export PKG_CONFIG_PATH=/home/yulong/sw/opencv-3.4.0/install/lib64/pkgconfig
 export LIBRARY_PATH=/home/yulong/sw/opencv-3.4.0/install/lib64:$LIBRARY_PATH
 export LD_LIBRARY_PATH=/home/yulong/sw/opencv-3.4.0/install/lib64:$LD_LIBRARY_PATH
+
+
+---------------------------------------------------------------------------------
+sudo apt-get install build-essential
+    # 必须的，gcc编译环境
+sudo apt-get install cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+    # 必须的,包括cmake等工具
+
+sudo apt-get install python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
+    # 可选的，看个人需要，总共5M左右
+    
+    cd ~/opencv310
+    # opencv310为自己建的，源码将放在这里
+git clone https://github.com/Itseez/opencv.git
+git clone https://github.com/Itseez/opencv_contrib.git
+
+cd opencv-3.1.0
+mkdir build
+
+cd opencv-3.1.0/build
+cmake -D CMAKE_BUILD_TYPE=Release -D CMAKE_INSTALL_PREFIX=/usr/local ..
+    # 生成后的Makefile在build文件夹中，而需要的CMakeLists.txt在 ".."中，即上一级文件夹中（opencv-3.1.0）
+    
+    
+make -j7
+    # 7个线程编译
+sudo make install
+    # 安装
+    
+    
+    
+    test：
+    
+#include <opencv2/opencv.hpp>       // 注意：使用"/"，和windows不同
+#include <iostream>
+#include <string>
+using namespace cv;
+using namespace std;
+int main()
+{
+    Mat img = imread("pic.jpg");
+    if(img.empty())
+    {
+        cout<<"error";
+        return -1;
+    }
+    imshow("mypic",img);
+    waitKey();
+    return 0;
+}
