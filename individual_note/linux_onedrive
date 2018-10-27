@@ -1,0 +1,13 @@
+$ git clone http://github.com/xybu92/onedrive-d.git
+$ cd onedrive-d
+$ ./install.sh
+
+After installed successfully.
+
+$ onedrive-pref
+step 1/4 Y
+Website authorized.
+
+setp 2/4 Y
+setp 3/4 n
+setp 4/4 n
