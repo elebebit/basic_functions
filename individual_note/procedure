@@ -1,0 +1,35 @@
+1. PCIE error
+sudo cp /etc/default/grub /etc/default/grub.bak
+sudo -H gedit /etc/default/grub
+
+ 找到  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+ 切换为  GRUB_CMDLINE_LINUX_DEFAULT="quiet splash pci=nomsi"
+
+sudo update-grub
+sudo reboot
+
+
+2 安装中文输入法
+sudo apt-get install ibus-sunpinyin
+
+
+3 安装 pip3
+sudo apt-get update
+sudo aptget install python3-pip
+
+4 安装sublime
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo apt-get update
+sudo apt-get install sublime-text-installer
+
+5 安装nvidia-smi cuda9.0 && 安装cudnn
+
+download from the website:
+https://developer.nvidia.com/cuda-90-download-archive?target_os=Linux&target_arch=x86_64&target_distro=Ubuntu&target_version=1604&target_type=deblocal
+
+sudo dpkg -i cuda-repo-ubuntu1604-9-0-local_9.0.176-1_amd64.deb
+sudo apt-key add /var/cuda-repo-<version>/7fa2af80.pub
+sudo apt-get update
+sudo apt-get install cuda
+
+https://blog.csdn.net/yangyuwen_yang/article/details/80709407
