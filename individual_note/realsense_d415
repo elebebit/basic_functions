@@ -1,0 +1,31 @@
+1. from github download source code
+git clone https://github.com/IntelRealSense/librealsense.git
+
+2. install environment
+
+sudo apt-get install libusb-1.0-0-dev libglfw3-dev libgtk-3-dev
+
+echo 'deb http://realsense-hw-public.s3.amazonaws.com/Debian/apt-repo xenial main' | sudo tee /etc/apt/sources.list.d/realsense-public.list
+
+sudo apt-key adv --keyserver keys.gnupg.net --recv-key 6F3EFCDE
+
+sudo apt-get update
+
+sudo apt-get install librealsense2-dkms
+sudo apt-get install librealsense2-utils
+
+if success:
+
+modinfo uvcvideo | grep "version:" 
+
+3.make
+cd librealsense
+mkdir build
+cd build
+cmake ..
+make -j8
+sudo make install
+
+4.test
+cd example/capture
+ ./rs-caputure
