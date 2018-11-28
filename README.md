@@ -1,2 +1,2 @@
-# python_useful_code
+# useful_code
 fundamention
