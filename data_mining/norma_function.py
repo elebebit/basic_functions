@@ -96,3 +96,20 @@ def line_fig(x,y):
 	plt.yticks(fontsize=20)
 	plt.legend()
 	plt.savefig('xx.eps')
+
+def csv_read():
+	file='sitka_weather_07-2014.csv'
+	with open(file) as it :
+	reader=csv.reader(it)
+	data=next(reader)
+
+	dates,highs,lows=[],[],[]
+
+	for ras in reader:
+		high=int(ras[1])
+		low=int(ras[2])
+		date=datetime.strptime(ras[0],"%Y-%m-%d")
+		highs.append(high)
+		lows.append(low)
+		dates.append(date)
+	
